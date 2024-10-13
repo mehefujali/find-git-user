@@ -22,7 +22,7 @@ const displayUser = (userData) => {
 
       const userCard = document.getElementById("userCard")
       userCard.innerHTML = `
-      <div>
+      <div class=" flex flex-col gap-3">
       <img class=" border-2 border-white rounded-full w-40" src="${avatar_url}">
       <h1 class=" text-2xl font-bold">${name || "N/A"}</h1>
       <p>Bio : ${bio || "N/A"}</p>
