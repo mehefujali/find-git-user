@@ -17,12 +17,19 @@ document.getElementById("searchBtn").addEventListener("click", () => {
 
 lodeUser("mehefujali")
 const displayUser = (userData) => {
-      const { avatar_url, name, html_url } = userData
+      const { avatar_url, name, html_url, blog, public_repos, bio } = userData
+      console.log(userData);
 
       const userCard = document.getElementById("userCard")
       userCard.innerHTML = `
-      <img src="${avatar_url}">
-      <h1>${name}</h1>
-      <a href="${html_url}">${html_url}</a>
+      <div>
+      <img class=" border-2 border-white rounded-full w-40" src="${avatar_url}">
+      <h1 class=" text-2xl font-bold">${name || "N/A"}</h1>
+      <p>Bio : ${bio || "N/A"}</p>
+      <a href="${html_url}">Profile link : ${html_url || "N/A"}</a>
+      <br>
+      <a href="${blog}">portfolio link : ${blog || "N/A"}</a>
+      <p>Public repos : ${public_repos || "N/A"}</p>
+      </div>
       `
 }
